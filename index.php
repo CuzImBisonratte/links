@@ -13,7 +13,6 @@ $DBC = mysqli_connect($CONFIG['db']['host'], $CONFIG['db']['username'], $CONFIG[
 if (!$DBC) die("Connection failed: " . mysqli_connect_error());
 
 $l = $_GET['l'];
-var_dump($l);
 
 // Get link
 $q = mysqli_prepare($DBC, "SELECT redirect FROM links WHERE id = ?");
