@@ -1,0 +1,24 @@
+<?php
+
+return array(
+    'db' => array(
+        'host' => '',
+        'username' => '',
+        'password' => '',
+        'dbname' => ''
+    ),
+    'oauth2' => array(
+        'clientId' => '',
+        'clientSecret' => '',
+        'redirectUri' => 'https://YOUR-SERVER-ADRESS-HERE/links/callback.php',
+        'cloudUrl' => ''
+    ),
+    'shortLinks' => array(
+        'min' => 3,
+        'max' => 255,
+        'default' => 5,
+        'pretty' => false
+    ),
+    'instanceUrl' => '',
+    'footerMsg' => ''
+);
