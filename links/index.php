@@ -19,6 +19,9 @@ if (!isset($_SESSION['user'])) {
 $DBC = mysqli_connect($CONFIG['db']['host'], $CONFIG['db']['username'], $CONFIG['db']['password'], $CONFIG['db']['dbname']);
 if (!$DBC) die("Connection failed: " . mysqli_connect_error());
 
+// Set connection to use UTF-8
+mysqli_set_charset($DBC, "utf8");
+
 // Get links
 $links = array();
 $q = mysqli_prepare($DBC, "SELECT id, redirect FROM links WHERE user = ?");

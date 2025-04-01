@@ -12,6 +12,9 @@ $CONFIG = require_once 'config.php';
 $DBC = mysqli_connect($CONFIG['db']['host'], $CONFIG['db']['username'], $CONFIG['db']['password'], $CONFIG['db']['dbname']);
 if (!$DBC) die("Connection failed: " . mysqli_connect_error());
 
+// Set connection to use UTF-8
+mysqli_set_charset($DBC, "utf8");
+
 $l = $_GET['l'];
 
 // Get link

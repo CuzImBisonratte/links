@@ -22,6 +22,9 @@ if (!isset($_GET['id'])) {
 $DBC = mysqli_connect($CONFIG['db']['host'], $CONFIG['db']['username'], $CONFIG['db']['password'], $CONFIG['db']['dbname']);
 if (!$DBC) die("Connection failed: " . mysqli_connect_error());
 
+// Set connection to use UTF-8
+mysqli_set_charset($DBC, "utf8");
+
 // Prepare delete statement
 $stmt = mysqli_prepare($DBC, "DELETE FROM links WHERE id = ? AND user = ?");
 $stmt->bind_param('ss', $_GET['id'], $_SESSION['user']['ocs']['data']['id']);
