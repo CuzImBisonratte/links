@@ -62,6 +62,8 @@ $q->close();
                 echo "<td>" . $links[$i]['redirect'] . "</td>";
                 echo "<td>";
                 echo "<a href='delete.php?id=" . $links[$i]['id'] . "'>Löschen</a>";
+                echo " | ";
+                echo "<a href='javascript:void(0)' onclick=\"navigator.clipboard.writeText('" . $CONFIG['instanceUrl'] . ($CONFIG['shortLinks']['pretty'] ? "/" : "/?l=") . $links[$i]['id'] . "')\" title='Link kopieren' class='copy'>Kopieren</a>";
                 echo "</td>";
                 echo "</tr>";
             }
