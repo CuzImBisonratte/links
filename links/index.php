@@ -64,6 +64,9 @@ $q->close();
                 echo "<a href='delete.php?id=" . $links[$i]['id'] . "'>Löschen</a>";
                 echo " | ";
                 echo "<a href='javascript:void(0)' onclick=\"navigator.clipboard.writeText('" . $CONFIG['instanceUrl'] . ($CONFIG['shortLinks']['pretty'] ? "/" : "/?l=") . $links[$i]['id'] . "')\" title='Link kopieren' class='copy'>Kopieren</a>";
+                echo " | ";
+                echo "<a href='javascript:void(0)' title='QR-Code generieren' class='qr' onclick=\"window.open('qr.php?id=" . $links[$i]['id'] . "', '_blank', 'width=600,height=600')\" 
+                >QR-Code</a>";
                 echo "</td>";
                 echo "</tr>";
             }
